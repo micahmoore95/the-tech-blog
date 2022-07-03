@@ -20,7 +20,8 @@ router.get('/', (req, res) => {
         },
       ],
     });
-}).then((dbPostData) => {
+})
+.then((dbPostData) => {
   const post = dbPostData.map((item) => {
     return {
       title: item.title,
