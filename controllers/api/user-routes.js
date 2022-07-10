@@ -43,3 +43,11 @@ router.post('/login', async function login(req, res) {
         res.status(200).json({ message: 'Logged In!' });
       });
 });
+
+router.get('/', (req, res) => {
+  User.findAll({
+    attributes: ['id', 'username', 'email', 'password'],
+  }).then((data) => res.json(data));
+});
+
+module.exports = router;
